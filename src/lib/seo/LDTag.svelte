@@ -3,8 +3,7 @@
 	import type { Schema } from '$utils/json-ld';
 
 	export let schema: Schema;
+
 </script>
 
-<svelte:head>
-	{@html serializeSchema(schema)}
-</svelte:head>
+{@html serializeSchema(schema)}

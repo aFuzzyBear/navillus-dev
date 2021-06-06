@@ -1,6 +1,7 @@
 <script lang="ts">
 	import SEO from '$lib/seo/SEO.svelte';
 	import ContactForm from '$lib/ContactForm.svelte';
+	import { organizationSchema, websiteSchema } from '$utils/json-ld';
 	import featureSprites from '../assets/feature-sprites.svg';
 	import toolSprites from '../assets/tool-sprites.svg';
 
@@ -120,9 +121,10 @@
 			title: 'Vercel'
 		}
 	];
+
 </script>
 
-<SEO />
+<SEO schemas={[organizationSchema, websiteSchema]} />
 
 <section>
 	<div class="container hero">

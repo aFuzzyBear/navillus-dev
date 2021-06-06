@@ -1,14 +1,18 @@
 <script lang="ts">
 	import { page } from '$app/stores';
 	import site from '$data/site.json';
+	import type { Schema } from '$utils/json-ld';
+	import LdTag from './LDTag.svelte';
 
 	export let title = 'Jamstack Developers for Hire';
 	export let description =
 		"We specialize in finding simple solutions to complex software problems. We value data-driven decisions and accessibility over this month's latest tech trends.";
 	export let image = '/share.png';
+	export let schemas: Schema[] = [];
 
 	$: url = `${site.url}${$page.path}`;
 	$: imageAbsolute = `${site.url}${image}`;
+
 </script>
 
 <svelte:head>
@@ -36,4 +40,8 @@
 	<meta name="twitter:card" content={site.social.twitter_card} />
 	<meta name="twitter:site" content={site.social.twitter} />
 	<meta name="twitter:creator" content={site.social.twitter} />
+
+	{#each schemas as schema}
+		<LdTag {schema} />
+	{/each}
 </svelte:head>

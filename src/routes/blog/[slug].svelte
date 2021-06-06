@@ -16,22 +16,23 @@
 			error: new Error(`Could not load ${url}`)
 		};
 	}
+
 </script>
 
 <script lang="ts">
-	import LDTag from '$lib/seo/LDTag.svelte';
 	import SEO from '$lib/seo/SEO.svelte';
 	import { blogPostSchema } from '$utils/json-ld';
 	import './prism-hopscotch.postcss';
 
 	export let post: MarkdownData<BlogPostData>;
+
 </script>
 
-<LDTag schema={blogPostSchema(post)} />
 <SEO
 	title={post.attributes.title}
 	description={post.attributes.description}
 	image={post.attributes.image}
+	schemas={[blogPostSchema(post)]}
 />
 
 <section class="alt">
@@ -86,4 +87,5 @@
 			margin-top: var(--spacer-sm);
 		}
 	}
+
 </style>
