@@ -1,5 +1,4 @@
 import site from '$data/site.json';
-import { sortedPosts } from '../routes/blog/_posts';
 import type { BlogPosting, Organization, Thing, WebSite, WithContext } from 'schema-dts';
 
 export type Schema = Thing | WithContext<Thing>;
@@ -37,8 +36,13 @@ export function blogPostSchema(post: MarkdownData<BlogPostData>): WithContext<Bl
 		url: `${site.url}/blog/${post.attributes.slug}`,
 		datePublished: new Date(post.attributes.published_date).toDateString(),
 		headline: post.attributes.title,
+		image: post.attributes.image,
 		publisher: {
 			...publisher
+		},
+		author: {
+			'@type': 'Person',
+			name: `${post.attributes.author.first_name} ${post.attributes.author.last_name}`
 		},
 		dateModified:
 			post.attributes.modified_date && new Date(post.attributes.modified_date).toDateString()

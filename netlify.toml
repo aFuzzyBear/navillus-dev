@@ -10,6 +10,3 @@ package = "netlify-plugin-a11y"
 
 [[plugins]]
 package = "@netlify/plugin-sitemap"
-
-[[plugins]]
-package = "netlify-plugin-checklinks"
