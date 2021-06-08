@@ -8,7 +8,7 @@ specifiers:
   '@typescript-eslint/eslint-plugin': ^4.25.0
   '@typescript-eslint/parser': ^4.25.0
   autoprefixer: ^10.2.6
-  chisel.css: ^0.5.0
+  chisel.css: ^0.5.1
   cssnano: ^5.0.5
   eslint: ^7.27.0
   eslint-config-prettier: ^8.3.0
@@ -39,7 +39,7 @@ devDependencies:
   '@typescript-eslint/eslint-plugin': 4.25.0_ec7770e83475322b368bff30b543badb
   '@typescript-eslint/parser': 4.25.0_eslint@7.27.0+typescript@4.3.2
   autoprefixer: 10.2.6_postcss@8.3.0
-  chisel.css: 0.5.0
+  chisel.css: 0.5.1
   cssnano: 5.0.5_postcss@8.3.0
   eslint: 7.27.0
   eslint-config-prettier: 8.3.0_eslint@7.27.0
@@ -494,8 +494,8 @@ packages:
     engines: {node: '>=8'}
     dev: true
 
-  /chisel.css/0.5.0:
-    resolution: {integrity: sha512-8MxkwVjKBMsCyD6JI77++5Lfb01Sfx1a/uhftc5OuO3fBQ+d2FXOedbmff7I8MKeLpAYtIUtb3ThFgzd1sjh/Q==}
+  /chisel.css/0.5.1:
+    resolution: {integrity: sha512-rG7BKOekAas1jMildrecgQH6K8h3wcXkTrN4p2DIoCFVj+ZZ985KPeg1SscvD8nGC4jwQHPrvtN3G2J7wIwCJQ==}
     dev: true
 
   /clipboard/2.0.8:
@@ -786,8 +786,8 @@ packages:
       is-arrayish: 0.2.1
     dev: true
 
-  /esbuild/0.12.6:
-    resolution: {integrity: sha512-RDvVLvAjsq/kIZJoneMiUOH7EE7t2QaW7T3Q7EdQij14+bZbDq5sndb0tTanmHIFSqZVMBMMyqzVHkS3dJobeA==}
+  /esbuild/0.12.7:
+    resolution: {integrity: sha512-vxENKWBo928ErLiT/uUv8Sl2EoC5cF3cZzCTc8hDEh9ZAZ75xblJCr72NeJo74lxWaGopIePZPIWq1qDpLUHQQ==}
     hasBin: true
     requiresBuild: true
     dev: true
@@ -1902,8 +1902,8 @@ packages:
       glob: 7.1.7
     dev: true
 
-  /rollup/2.51.0:
-    resolution: {integrity: sha512-ITLt9sScNCBVspSHauw/W49lEZ0vjN8LyCzSNsNaqT67vTss2lYEfOyxltX8hjrhr1l/rQwmZ2wazzEqhZ/fUg==}
+  /rollup/2.51.1:
+    resolution: {integrity: sha512-8xfDbAtBleXotb6qKEHWuo/jkn94a9dVqGc7Rwl3sqspCVlnCfbRek7ldhCARSi7h32H0xR4QThm1t9zHN+3uw==}
     engines: {node: '>=10.0.0'}
     hasBin: true
     optionalDependencies:
@@ -2250,10 +2250,10 @@ packages:
     engines: {node: '>=12.0.0'}
     hasBin: true
     dependencies:
-      esbuild: 0.12.6
+      esbuild: 0.12.7
       postcss: 8.3.0
       resolve: 1.20.0
-      rollup: 2.51.0
+      rollup: 2.51.1
     optionalDependencies:
       fsevents: 2.3.2
     dev: true
