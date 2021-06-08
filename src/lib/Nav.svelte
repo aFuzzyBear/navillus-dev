@@ -5,6 +5,14 @@
 	import { page } from '$app/stores';
 	import { enhance } from '$lib/actions/enhance';
 	import Brand from '$lib/logos/Brand.svelte';
+	import ThemeToggle from './ThemeToggle.svelte';
+	import { AppTheme, toggleTheme, setWindowTheme, getWindowTheme } from '../utils/theme';
+
+	let theme: AppTheme;
+
+	const onToggleTheme = () => (theme = toggleTheme(theme));
+
+	$: if (mounted) setWindowTheme(theme);
 
 	const routes = [
 		{
@@ -45,7 +53,9 @@
 
 	onMount(() => {
 		mounted = true;
+		theme = getWindowTheme();
 	});
+
 </script>
 
 <svelte:window bind:innerWidth />
@@ -71,6 +81,8 @@
 				{/each}
 			</ul>
 		</nav>
+
+		<ThemeToggle bind:theme on:click={onToggleTheme} />
 
 		<a href="/#contact" class="button button--outline">Get in Touch</a>
 
@@ -122,7 +134,8 @@
 <div id="start-of-content" class="sr-only" bind:this={startOfContentElem} />
 
 <style style lang="postcss">
-	* + * {
+	* + *:not(.hamburger),
+	* + :global(*) {
 		margin-top: 0;
 	}
 
@@ -158,21 +171,27 @@
 		padding-bottom: var(--spacer-sm);
 		display: flex;
 		align-items: center;
-		justify-content: space-between;
 	}
 
 	.top nav,
 	.top a.button {
 		display: none;
+		margin-top: 0;
 	}
 
 	.brand {
 		height: 2rem;
+		flex: 1 0 0%;
 
 		& :global(svg) {
 			margin-top: 0;
 			height: 100%;
 		}
+	}
+
+	.hamburger,
+	a.button--outline {
+		margin-left: 1em;
 	}
 
 	ul {
@@ -195,9 +214,18 @@
 	}
 
 	@media (min-width: 768px) {
+		.brand {
+			flex: initial;
+		}
+
 		.top nav,
 		.top a.button {
 			display: inline-flex;
+		}
+
+		.top nav {
+			flex: 1 0 0%;
+			justify-content: center;
 		}
 
 		label[for='toggle'] {
@@ -218,4 +246,5 @@
 			gap: var(--spacer-xs);
 		}
 	}
+
 </style>
