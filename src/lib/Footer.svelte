@@ -2,6 +2,7 @@
 	import contactSprites from '../assets/contact-sprites.svg';
 
 	const year = new Date().getFullYear();
+
 </script>
 
 <footer>
@@ -60,7 +61,7 @@
 	</div>
 </footer>
 
-<style>
+<style lang="postcss">
 	footer {
 		background: var(--chisel-neutral-50);
 		margin-top: 0;
@@ -108,8 +109,15 @@
 		}
 	}
 
-	.links li:not(:last-of-type) {
-		border-right: 1px solid currentColor;
+	.links li {
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		text-align: center;
+
+		&:not(:last-of-type) {
+			border-right: 1px solid currentColor;
+		}
 	}
 
 	.legal {
@@ -117,4 +125,5 @@
 		flex-direction: column;
 		align-items: center;
 	}
+
 </style>
